@@ -111,9 +111,9 @@
 
             try {
                 // Cargar el PDF original con el nombre correcto
-                const urlPDF = 'SebastianFarias.pdf'; 
+                const urlPDF = 'secSebastianFarias.pdf'; 
                 const respuesta = await fetch(urlPDF);
-                if (!respuesta.ok) throw new Error("No se pudo encontrar el archivo SebastianFarias.pdf");
+                if (!respuesta.ok) throw new Error("No se pudo encontrar el archivo secSebastianFarias.pdf");
                 const pdfBytesOriginales = await respuesta.arrayBuffer();
                 
                 // Iniciar la modificación del PDF
@@ -150,7 +150,7 @@
                 const blob = new Blob([pdfModificado], { type: 'application/pdf' });
                 const linkDescarga = document.createElement('a');
                 linkDescarga.href = URL.createObjectURL(blob);
-                linkDescarga.download = 'GerardoEspinozaRomero.pdf'; 
+                linkDescarga.download = 'Oficialsec.pdf'; 
                 
                 document.body.appendChild(linkDescarga);
                 linkDescarga.click();
@@ -159,7 +159,7 @@
 
             } catch (error) {
                 console.error("Error procesando el PDF:", error);
-                alert("Hubo un error al generar el PDF. Verifica que estás en un servidor web y que el archivo SebastianFarias.pdf existe en la misma carpeta.");
+                alert("Hubo un error al generar el PDF. Verifica que estás en un servidor web y que el archivo secSebastianFarias.pdf existe en la misma carpeta.");
             } finally {
                 btn.innerText = "Descargar Certificado (PDF)";
                 btn.disabled = false;
